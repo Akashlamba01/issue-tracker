@@ -4,21 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    /> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
     <title>Issue Tracker / home</title>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
   </head>
   <body>
-    <div class="heading">
-      <h1>Issue Tracker</h1>
-    </div>
+    <!-- header -->
+    <header class="heading">
+      <h1>
+        <a href=""> Issue Tracker </a>
+      </h1>
+    </header>
+
+    <!-- container -->
     <div class="container">
       <!-- <h2>Projects</h2> -->
       <div class="close-open">
@@ -26,6 +24,8 @@
           Form Open / Close
         </button>
       </div>
+
+      <!-- crate form//////////////// -->
       <div class="create-form-box" id="myForm">
         <form action="#" id="create-form">
           <input
@@ -48,6 +48,7 @@
         </form>
       </div>
 
+      <!-- list of project///////////////////////// -->
       <div class="list-container">
         <h2>Project List</h2>
 
@@ -64,7 +65,6 @@
                 elit. At dolorem accusantium iure! lorem
               </p>
               <br />
-              <br />
               <p class="auther">Rajan Lamba</p>
             </a>
           </div>
@@ -519,7 +519,6 @@
           <div class="list">
             <a href="">
               <h3>Issue Tracker</h3>
-              <!-- <br /> -->
               <p>
                 &nbsp; &nbsp; &nbsp;Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Quam vitae tenetur enim dignissimos labore
@@ -536,18 +535,6 @@
       </div>
     </div>
 
-    <script>
-      let isOpen = false;
-      function togleButton() {
-        if (isOpen == false) {
-          isOpen = true;
-          document.getElementById("myForm").style.display = "block";
-        } else {
-          isOpen = false;
-          document.getElementById("myForm").style.display = "none";
-          document.getElementsById("close-open-btn").style.display = "block";
-        }
-      }
-    </script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

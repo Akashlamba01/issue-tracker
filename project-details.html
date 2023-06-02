@@ -4,22 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    /> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
     <title>Issue Tracker / home</title>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" href="css/project-details.css" />
   </head>
   <body>
-    <div class="heading">
-      <h1>Issue Tracker</h1>
-    </div>
+    <!-- header//////////////////////// -->
+    <header class="heading">
+      <h1>
+        <a href="/index.html"> Issue Tracker </a>
+      </h1>
+    </header>
+
+    <!-- related project////////////////////////// -->
     <div class="container">
       <!-- <h2>Projects</h2> -->
 
@@ -28,29 +26,30 @@
 
         <div class="list-box">
           <div class="list">
-            <a href="./prjoct-details.html">
-              <h3>Issue Tracker</h3>
-              <!-- <br /> -->
-              <p>
-                &nbsp; &nbsp; &nbsp;Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quam vitae tenetur enim dignissimos labore
-                nulla, ipsam laboriosam, excepturi non corrupti inventore quasi
-                voluptates. Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. At dolorem accusantium iure! lorem
-              </p>
-              <br />
-              <br />
-              <p class="auther">Rajan Lamba</p>
-            </a>
+            <h3>Issue Tracker</h3>
+            <!-- <br /> -->
+            <p>
+              &nbsp; &nbsp; &nbsp;Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Quam vitae tenetur enim dignissimos labore
+              nulla, ipsam laboriosam, excepturi non corrupti inventore quasi
+              voluptates. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. At dolorem accusantium iure! lorem
+            </p>
+            <br />
+            <br />
+            <p class="auther">Rajan Lamba</p>
           </div>
         </div>
       </div>
 
+      <!-- togle for issue creater(bug)////////////////////// -->
       <div class="close-open" style="margin-top: 20px">
         <button class="open-button" onclick="togleButton()">
           Form Open / Close
         </button>
       </div>
+
+      <!-- form to create bug///////////////////////// -->
       <div class="create-form-box" id="myForm">
         <form action="#" id="create-form">
           <input type="text" name="name" required placeholder="Title..." />
@@ -64,28 +63,130 @@
             required
           ></textarea>
 
+          <!-- bugs/////////////// -->
           <div class="checkbox-container">
             <div class="seprate-input-checkbox">
-              <input type="checkbox" name="performance-degradation" />
-              <label for="Performance-degradation"
-                >Performance Degradation</label
-              >
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="performance-degradation"
+                    onclick="selectTogel('select1', 'checked1')"
+                    class="checked"
+                    id="checked1"
+                  />
+                </div>
+                <div>
+                  <label for="Performance-degradation"
+                    >Performance Degradation</label
+                  >
+                </div>
+              </div>
+              <div id="select1">
+                <select name="" id="" class="select-box">
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
             </div>
+
             <div class="seprate-input-checkbox">
-              <input type="checkbox" name="data-lose-ishu" />
-              <label for="data-lose-ishu">Data Loss Issue</label>
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="data-lose-ishu"
+                    onclick="selectTogel('select2', 'checked2')"
+                    class="checked"
+                    id="checked2"
+                  />
+                </div>
+                <div>
+                  <label for="data-lose-ishu">Data Lose Ishu</label>
+                </div>
+              </div>
+              <div id="select2">
+                <select name="" id="" class="select-box">
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
             </div>
+
             <div class="seprate-input-checkbox">
-              <input type="checkbox" name="broken-link" />
-              <label for="broken-link">Broken Link</label>
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="broken-link"
+                    onclick="selectTogel('select3', 'checked3')"
+                    class="checked"
+                    id="checked3"
+                  />
+                </div>
+                <div>
+                  <label for="broken-link">Broken Link</label>
+                </div>
+              </div>
+              <div id="select3">
+                <select name="" id="" class="select-box">
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
             </div>
+
             <div class="seprate-input-checkbox">
-              <input type="checkbox" name="accessibility-issue" />
-              <label for="accessibility-issue">Accessibility Issue</label>
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="accessibility-issue"
+                    onclick="selectTogel('select4', 'checked4')"
+                    class="checked"
+                    id="checked4"
+                  />
+                </div>
+                <div>
+                  <label for="accessibility-issue">Accessibility Issue</label>
+                </div>
+              </div>
+              <div id="select4">
+                <select name="" id="" class="select-box">
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
             </div>
+
             <div class="seprate-input-checkbox">
-              <input type="checkbox" name="incorrect-calculation" />
-              <label for="incorrect-calculation">Incorrect Calculation</label>
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="incorrect-calculation"
+                    onclick="selectTogel('select5', 'checked5')"
+                    class="checked"
+                    id="checked5"
+                  />
+                </div>
+                <div>
+                  <label for="incorrect-calculation"
+                    >Incorrect Calculation</label
+                  >
+                </div>
+              </div>
+              <div id="select5">
+                <select name="" id="" class="select-box">
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -93,10 +194,40 @@
         </form>
       </div>
 
+      <!-- list of related bugs/////////////////////// -->
       <div class="list-container" style="margin-top: 50px">
         <h2>Related Bug</h2>
+
+        <!-- filter ///////////////////// -->
+        <div class="filter-container">
+          <p>filter / search</p>
+          <div class="filter-bugs">
+            <form action="">
+              <input type="text" placeholder="filter by bugs" />
+
+              <input type="text" placeholder="filter by auther" /><br />
+              <button>filter</button>
+            </form>
+          </div>
+
+          <br />
+          <div class="search-bar">
+            <form action="">
+              <input
+                type="search"
+                id="searchbar"
+                placeholder="search by titel and disc..."
+                required
+              />
+              <br />
+              <button>search</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- list of bugs//////////////////////// -->
         <div class="list-box">
-          <div class="list">
+          <div class="list" id="bugs-box">
             <a href="./prjoct-details.html">
               <h3>Issue Tracker</h3>
               <!-- <br /> -->
@@ -108,7 +239,10 @@
                 elit. At dolorem accusantium iure! lorem
               </p>
               <br />
-              <br />
+              <div class="bugs">
+                <h4>Bugs:</h4>
+                <p>&nbsp; &nbsp; &nbsp;Performance Degradation (medium)</p>
+              </div>
               <p class="auther">Rajan Lamba</p>
             </a>
           </div>
@@ -116,18 +250,6 @@
       </div>
     </div>
 
-    <script>
-      let isOpen = false;
-      function togleButton() {
-        if (isOpen == false) {
-          isOpen = true;
-          document.getElementById("myForm").style.display = "block";
-        } else {
-          isOpen = false;
-          document.getElementById("myForm").style.display = "none";
-          document.getElementsById("close-open-btn").style.display = "block";
-        }
-      }
-    </script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
