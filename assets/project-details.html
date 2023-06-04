@@ -13,7 +13,7 @@
     <!-- header//////////////////////// -->
     <header class="heading">
       <h1>
-        <a href="/index.html"> Issue Tracker </a>
+        <a href="index.html"> Issue Tracker </a>
       </h1>
     </header>
 
@@ -51,11 +51,16 @@
 
       <!-- form to create bug///////////////////////// -->
       <div class="create-form-box" id="myForm">
-        <form action="#" id="create-form">
-          <input type="text" name="name" required placeholder="Title..." />
-          <input type="text" name="auther" required placeholder="Auther Name" />
+        <form action="/bug/create" id="create-form" method="post">
+          <input type="text" name="title" required placeholder="Title..." />
+          <input
+            type="text"
+            name="bugAuther"
+            required
+            placeholder="Auther Name"
+          />
           <textarea
-            name="discription"
+            name="bugDisc"
             id=""
             cols="29"
             rows="4"
@@ -70,10 +75,11 @@
                 <div class="input-box">
                   <input
                     type="checkbox"
-                    name="performance-degradation"
+                    name="bug"
                     onclick="selectTogel('select1', 'checked1')"
                     class="checked"
                     id="checked1"
+                    value="Performance Degradation"
                   />
                 </div>
                 <div>
@@ -83,7 +89,8 @@
                 </div>
               </div>
               <div id="select1">
-                <select name="" id="" class="select-box">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
                   <option value="easy">easy</option>
                   <option value="medium">medium</option>
                   <option value="hard">hard</option>
@@ -96,10 +103,11 @@
                 <div class="input-box">
                   <input
                     type="checkbox"
-                    name="data-lose-ishu"
+                    name="bug"
                     onclick="selectTogel('select2', 'checked2')"
                     class="checked"
                     id="checked2"
+                    value="Data Lose Ishu"
                   />
                 </div>
                 <div>
@@ -107,7 +115,8 @@
                 </div>
               </div>
               <div id="select2">
-                <select name="" id="" class="select-box">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
                   <option value="easy">easy</option>
                   <option value="medium">medium</option>
                   <option value="hard">hard</option>
@@ -120,10 +129,11 @@
                 <div class="input-box">
                   <input
                     type="checkbox"
-                    name="broken-link"
+                    name="bug"
                     onclick="selectTogel('select3', 'checked3')"
                     class="checked"
                     id="checked3"
+                    value="Broken Link"
                   />
                 </div>
                 <div>
@@ -131,7 +141,8 @@
                 </div>
               </div>
               <div id="select3">
-                <select name="" id="" class="select-box">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
                   <option value="easy">easy</option>
                   <option value="medium">medium</option>
                   <option value="hard">hard</option>
@@ -144,10 +155,11 @@
                 <div class="input-box">
                   <input
                     type="checkbox"
-                    name="accessibility-issue"
+                    name="bug"
                     onclick="selectTogel('select4', 'checked4')"
                     class="checked"
                     id="checked4"
+                    value="Accessibility Issue"
                   />
                 </div>
                 <div>
@@ -155,7 +167,8 @@
                 </div>
               </div>
               <div id="select4">
-                <select name="" id="" class="select-box">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
                   <option value="easy">easy</option>
                   <option value="medium">medium</option>
                   <option value="hard">hard</option>
@@ -168,10 +181,11 @@
                 <div class="input-box">
                   <input
                     type="checkbox"
-                    name="incorrect-calculation"
+                    name="bug"
                     onclick="selectTogel('select5', 'checked5')"
                     class="checked"
                     id="checked5"
+                    value="Incorrect Calculation"
                   />
                 </div>
                 <div>
@@ -181,7 +195,8 @@
                 </div>
               </div>
               <div id="select5">
-                <select name="" id="" class="select-box">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
                   <option value="easy">easy</option>
                   <option value="medium">medium</option>
                   <option value="hard">hard</option>
