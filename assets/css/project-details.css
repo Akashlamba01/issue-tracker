@@ -56,6 +56,11 @@ input[type="checkbox"] {
   margin-bottom: 5px;
   padding-left: 5px;
 }
+.select-opt {
+  width: 171px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
 .filter-container button {
   padding: 0px 5px;
   text-align: right;
@@ -76,6 +81,7 @@ input[type="checkbox"] {
 }
 .bugs p {
   color: rgb(198, 196, 196);
+  margin-bottom: 8px;
 }
 
 /* media for 1081px and above???????????????????????? */

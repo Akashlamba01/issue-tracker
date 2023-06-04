@@ -18,4 +18,6 @@ router.post(
   bugController.create
 );
 
+router.get("/filter", bugController.getByFilter);
+
 module.exports = router;

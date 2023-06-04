@@ -14,6 +14,10 @@ const bugSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    project: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Project",
+    },
     bug: [
       {
         type: String,

@@ -8,13 +8,15 @@ router.post(
   "/create",
   celebrate({
     body: Joi.object().keys({
-      name: Joi.string().required(),
-      auther: Joi.string().required(),
+      name: Joi.string().uppercase().required(),
+      auther: Joi.string().uppercase().required(),
       disc: Joi.string().min(30).required(),
     }),
   }),
   projectController.create
 );
+
+router.get("/:id", projectController.getById);
 
 // router.use('/',)
 
