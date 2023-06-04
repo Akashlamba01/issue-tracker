@@ -18,6 +18,4 @@ router.post(
 
 router.get("/:id", projectController.getById);
 
-// router.use('/',)
-
 module.exports = router;

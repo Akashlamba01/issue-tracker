@@ -10,6 +10,8 @@ a {
 
 /* heaeing///////////////////////////// */
 .heading {
+  position: fixed;
+
   width: 100%;
   text-align: center;
   background: linear-gradient(
@@ -24,10 +26,20 @@ a {
   padding: 4px 0;
 }
 
+#main-container {
+  padding-top: 50px;
+  margin-top: 50px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /* main container////////////////////// */
 .container {
   width: 90%;
   margin: auto;
+  padding-top: 60px;
 }
 
 /* close open togle/////////////////////////// */
@@ -42,7 +54,7 @@ a {
   padding: 10px 0;
   border: none;
   cursor: pointer;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   /* position: fixed; */
   bottom: 23px;
   right: 28px;

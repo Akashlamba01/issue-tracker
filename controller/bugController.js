@@ -1,11 +1,12 @@
 const BugModel = require("../models/bug");
+const ProjectModel = require("../models/project");
 
 module.exports = {
   create: async (req, res) => {
-    console.log("sothing");
-    console.log(req.header.token);
+    // console.log("something");
+    // console.log(req.header.token);
     try {
-      console.log(req.body);
+      // console.log(req.body);
 
       let data = await BugModel.create({
         title: req.body.title,
@@ -18,6 +19,7 @@ module.exports = {
       let bugLevel = req.body.bugLevel;
 
       if (bugName.length > 5) {
+        // console.log("in bug 1");
         data.bug.push(bugName);
         data.bugLevel.push(bugLevel);
       } else {
@@ -46,29 +48,47 @@ module.exports = {
 
   getByFilter: async (req, res) => {
     try {
-      console.log(req.header.token);
-      let data = await BugModel.find();
-      console.log(data.length);
+      // console.log(req.header.token);
 
-      if (req.body.bugAuther == "") {
-        data.find({
-          bug: { $elemMatch: { $eq: req.body.bug } },
-        });
-        // return res.redirect("back");
-      } else {
-        data = data.find({
-          bugAuther: { $eq: req.body.bugAuther } && {
-            bug: { $elemMatch: { $eq: req.body.bug } },
-          },
-        });
-      }
+      let issue = await BugModel.find({
+        $and: [
+          { project: req.header.token },
+          { bug: { $elemMatch: { $eq: req.query.bug } } },
+          { bugAuther: { $regex: req.query.bugAuther, $options: "i" } },
+        ],
+      });
 
-      data.save();
+      let project = await ProjectModel.findById(req.header.token);
 
-      console.log(data);
+      return res.status(200).render("project-details", {
+        project: project,
+        data: issue,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({
+        success: false,
+        message: error,
+      });
+    }
+  },
 
-      return res.status(200).json({
-        data: data,
+  getBySearch: async (req, res) => {
+    try {
+      let issue = await BugModel.find({
+        $or: [
+          { title: { $regex: req.query.search, $options: "i" } },
+          { bugDisc: { $regex: req.query.search, $options: "i" } },
+        ],
+      });
+
+      let project = await ProjectModel.findById(req.header.token);
+
+      // console.log(issue, ": issue");
+
+      return res.status(200).render("project-details", {
+        project: project,
+        data: issue,
       });
     } catch (error) {
       console.log(error);

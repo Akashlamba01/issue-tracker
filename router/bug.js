@@ -8,8 +8,8 @@ router.post(
   "/create",
   celebrate({
     body: Joi.object().keys({
-      title: Joi.string().required(),
-      bugAuther: Joi.string().required(),
+      title: Joi.string().uppercase().required(),
+      bugAuther: Joi.string().uppercase().required(),
       bugDisc: Joi.string().min(30).required(),
       bug: Joi.required(),
       bugLevel: Joi.required(),
@@ -19,5 +19,7 @@ router.post(
 );
 
 router.get("/filter", bugController.getByFilter);
+
+router.get("/search", bugController.getBySearch);
 
 module.exports = router;

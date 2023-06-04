@@ -17,6 +17,8 @@
     </header>
 
     <!-- container -->
+    <div>
+
     <div class="container">
       <!-- <h2>Projects</h2> -->
       <div class="close-open">
@@ -53,15 +55,15 @@
         <h2>Project List</h2>
 
         <div class="list-box">
-          <% for(project of data) { %>
+          <% for(let i = 0; i < data.length; i++) { %>
 
           <div class="list">
-            <a href="/project/<%=project.id%>">
-              <h3><%= project.name%></h3>
+            <a href="/project/<%=data[data.length-1-i].id%>">
+              <h3><%= data[data.length-1-i].name%></h3>
               <!-- <br /> -->
-              <p>&nbsp; &nbsp; &nbsp;<%= project.disc %></p>
+              <p>&nbsp; &nbsp; &nbsp;<%= data[data.length-1-i].disc %></p>
               <br />
-              <p class="auther"><%= project.auther %></p>
+              <p class="auther"><%= data[data.length-1-i].auther %></p>
             </a>
           </div>
 

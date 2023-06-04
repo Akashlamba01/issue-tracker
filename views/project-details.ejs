@@ -212,9 +212,9 @@
         <div class="filter-container">
           <p>filter / search</p>
           <div class="filter-bugs">
-            <form action="/bug/filter" method="get">
+            <form action="/bug/filter">
               <select name="bug" class="select-opt" id="">
-                <option value="Performance Degradation" selected>
+                <option value="Performance Degradation">
                   Performance Degradation
                 </option>
                 <option value="Data Lose Ishu">Data Lose Ishu</option>
@@ -232,16 +232,17 @@
               />
 
               <br />
-              <button>filter</button>
+              <button type="submit">filter</button>
             </form>
           </div>
 
           <br />
           <div class="search-bar">
-            <form action="">
+            <form action="/bug/search">
               <input
                 type="search"
                 id="searchbar"
+                name="search"
                 placeholder="search by titel and disc..."
                 required
               />
@@ -253,25 +254,27 @@
 
         <!-- list of bugs//////////////////////// -->
         <div class="list-box">
-          <% for(issue of data){ %>
+          <% if(data.length == 0) { %>
+          <div class="list">
+            <h2>There is No bug!</h2>
+          </div>
+          <% } %> <% for(issue of data){ %>
           <div class="list" id="bugs-box">
-            <a href="./prjoct-details.html">
-              <h3><%= issue.title %></h3>
-              <!-- <br /> -->
-              <p>&nbsp; &nbsp; &nbsp;<%= issue.bugDisc %></p>
-              <br />
-              <div class="bugs">
-                <h4>Bugs:</h4>
-                <% for(let i = 0; i < issue.bug.length; i++) { %>
-                <p>
-                  &nbsp; &nbsp; &nbsp;
-                  <span style="color: red"> * </span> &nbsp; <%=issue.bug[i] %>
-                  ( <%= issue.bugLevel[i]%> )
-                </p>
-                <% } %>
-              </div>
-              <p class="auther"><%= issue.bugAuther %></p>
-            </a>
+            <h3><%= issue.title %></h3>
+            <!-- <br /> -->
+            <p>&nbsp; &nbsp; &nbsp;<%= issue.bugDisc %></p>
+            <br />
+            <div class="bugs">
+              <h4>Bugs:</h4>
+              <% for(let i = 0; i < issue.bug.length; i++) { %>
+              <p>
+                &nbsp; &nbsp; &nbsp;
+                <span style="color: red"> * </span>&nbsp; <%=issue.bug[i] %> (
+                <%= issue.bugLevel[i]%> )
+              </p>
+              <% } %>
+            </div>
+            <p class="auther"><%= issue.bugAuther %></p>
           </div>
           <% } %>
         </div>
