@@ -75,10 +75,16 @@ module.exports = {
 
   getBySearch: async (req, res) => {
     try {
+      // console.log(req.header.token);
       let issue = await BugModel.find({
-        $or: [
-          { title: { $regex: req.query.search, $options: "i" } },
-          { bugDisc: { $regex: req.query.search, $options: "i" } },
+        $and: [
+          { project: req.header.token },
+          {
+            $or: [
+              { title: { $regex: req.query.search, $options: "i" } },
+              { bugDisc: { $regex: req.query.search, $options: "i" } },
+            ],
+          },
         ],
       });
 
