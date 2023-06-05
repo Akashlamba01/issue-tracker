@@ -2,6 +2,8 @@
 
 Issue Tracker application that helps teams manage and track software issues efficiently.
 
+Note- for beter experience use it on mobile.
+
 ## Prerequisites
 
 - Node.js (version 18.15.0)
